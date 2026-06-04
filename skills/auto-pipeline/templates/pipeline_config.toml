@@ -1,0 +1,66 @@
+# 流水线配置文件
+# 密钥请放在 .env 文件中，不要写在这里
+
+[dailyhot]
+# 采集哪些平台的热搜
+platforms = ["weibo", "zhihu", "bilibili", "douyin"]
+# 每次采集的最大话题数
+max_topics = 5
+# 排除包含这些关键词的话题
+exclude_keywords = ["广告", "推广", "色情"]
+
+[mimo]
+# MiMo API 配置
+# api_key 从 .env 的 MIMO_API_KEY 读取
+base_url = "https://token-plan-cn.xiaomimimo.com/v1"
+model = "mimo-v2.5-pro"
+temperature = 0.8
+max_tokens = 2000
+
+[script]
+# 文案生成配置
+persona = "你是一个知识科普博主"
+scene_count = 5
+audience = "18-35岁对科技感兴趣的用户"
+tone = "轻松有趣，偶尔用比喻"
+
+[image]
+# ComfyUI 生图配置
+engine = "comfyui"
+comfyui_url = "http://127.0.0.1:8188"
+variants = 3
+width = 1024
+height = 1024
+cfg = 7.0
+steps = 30
+sampler = "euler_ancestral"
+scheduler = "normal"
+default_style = "mixed"
+
+[style.mapping]
+# 话题关键词 -> 生图风格映射
+科技 = "3d"
+AI = "3d"
+数码 = "3d"
+美食 = "realistic"
+生活 = "realistic"
+穿搭 = "realistic"
+游戏 = "2d"
+动漫 = "2d"
+
+[review]
+# 审核配置（--review 命令行参数可覆盖）
+enabled = false
+
+[publish]
+# 发布配置
+enabled = false
+platforms = ["douyin", "bilibili", "xhs"]
+interval_seconds = 30
+max_per_hour = 5
+max_per_day = 20
+
+[proxy]
+# 代理配置（国内访问外网资源）
+http = "http://127.0.0.1:7897"
+https = "http://127.0.0.1:7897"

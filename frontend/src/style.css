@@ -1,0 +1,39 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #333; }
+.page { max-width: 1200px; }
+.page h1 { font-size: 24px; margin-bottom: 8px; }
+.page .subtitle { color: #666; margin-bottom: 24px; font-size: 14px; }
+.card { background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+.card h3 { font-size: 16px; margin-bottom: 12px; }
+.btn { display: inline-block; padding: 8px 20px; border-radius: 6px; border: none; cursor: pointer; font-size: 14px; transition: all 0.2s; }
+.btn-primary { background: #4fc3f7; color: #fff; }
+.btn-primary:hover { background: #29b6f6; }
+.btn-primary:disabled { background: #ccc; cursor: not-allowed; }
+.btn-secondary { background: #e0e0e0; color: #333; }
+.btn-secondary:hover { background: #d0d0d0; }
+.btn-danger { background: #ef5350; color: #fff; }
+.btn-danger:hover { background: #e53935; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.tag { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 12px; background: #e3f2fd; color: #1976d2; }
+.tag-hot { background: #fce4ec; color: #c62828; }
+.status { display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+.status-idle { background: #e8f5e9; color: #2e7d32; }
+.status-running { background: #fff3e0; color: #e65100; }
+.status-error { background: #fce4ec; color: #c62828; }
+.loading { text-align: center; padding: 40px; color: #999; }
+.empty { text-align: center; padding: 60px; color: #999; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #eee; font-size: 14px; }
+th { background: #fafafa; font-weight: 600; }
+input, select, textarea { padding: 8px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; }
+input:focus, textarea:focus { outline: none; border-color: #4fc3f7; }
+/* 响应式 */
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; }
+  .sidebar { width: 60px; }
+  .sidebar .logo { font-size: 12px; padding: 8px; text-align: center; }
+  .nav-item { padding: 10px 8px; font-size: 12px; text-align: center; }
+  .content { padding: 16px; }
+  table { font-size: 12px; }
+  th, td { padding: 6px 8px; }
+}
